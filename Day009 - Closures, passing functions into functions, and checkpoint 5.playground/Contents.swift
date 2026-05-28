@@ -33,6 +33,8 @@ let data: (Int) -> String = getUserData
 let user = data(1989)
 print(user)
 
+#if false
+
 let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
 
 let captainFirstTeam = team.sorted(by: { (name1: String, name2:String) -> Bool in
@@ -46,7 +48,94 @@ let captainFirstTeam = team.sorted(by: { (name1: String, name2:String) -> Bool i
 })
 
 print(captainFirstTeam)
+#endif
 
 // How to use trailing closures and shorthand syntax
 
+let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
+
+let captainFirstTeam = team.sorted {
+    if $0 == "Suzanne" {
+        return true
+    } else if $1 == "Suzanne"{
+        return false
+    }
+    
+    return $0 < $1
+}
+
+print(captainFirstTeam)
+
+let reverseTeam = team.sorted {  $0 > $1 }
+
+print(reverseTeam)
+
+let tOnly = team.filter { $0.hasPrefix("T")}
+print(tOnly)
+
+let uppercaseTeam = team.map { $0.uppercased()}
+print(uppercaseTeam)
+
+// How to accept functions as parameters
+
+func makeArray(size: Int, using generator: () -> Int) -> [Int] {
+    var numbers = [Int]()
+
+    for _ in 0..<size {
+        let newNumber = generator()
+        numbers.append(newNumber)
+    }
+
+    return numbers
+}
+
+func generateNumber() -> Int {
+    Int.random(in: 1...20)
+}
+
+let newRolls = makeArray(size: 50, using: generateNumber)
+print(newRolls)
+
+func doImportantWork(first: () -> Void, second: () -> Void, third: () -> Void) {
+    print("About to start first work")
+    first()
+    print("About to start second work")
+    second()
+    print("About to start third work")
+    third()
+    print("Done!")
+}
+
+doImportantWork {
+    print("This is the first work")
+} second: {
+    print("This is the second work")
+} third: {
+    print("This is the third work")
+}
+print()
+// Checkpoint 5
+// sorted, filtered and map use them one after another
+
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+
+#if false
+let result = luckyNumbers.filter { !$0.isMultiple(of: 2)}.sorted().map { "\($0) is a lucky number"}.joined(separator: "\n")
+
+ print(result)
+#endif
+
+func isOdd(_ number: Int) -> Bool {
+    !number.isMultiple(of: 2)
+}
+
+func luckyString(_ number: Int) -> String {
+    "\(number) is a lucky number"
+}
+
+func printValue (_ string: String) {
+    print(string)
+}
+
+luckyNumbers.filter(isOdd).sorted().map(luckyString).forEach(printValue)
 
