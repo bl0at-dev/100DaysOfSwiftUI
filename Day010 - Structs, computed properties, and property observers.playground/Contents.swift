@@ -60,4 +60,49 @@ print(archer.vacationAllocated)
 
 // How to take action when a property changes
 
+struct Game {
+    var score = 0 {
+        didSet {
+            print("The score is now \(score)")
+        }
+    }
+}
+
+var game = Game()
+game.score += 10
+game.score += 5
+
+print()
+
+struct App {
+    var contacts = [String]() {
+        willSet {
+            print("Current value is: \(contacts)")
+            print("New value will be: \(newValue)")
+        }
+        
+        didSet {
+            print("There are now \(contacts.count) contacts")
+            print("Old value was: \(oldValue)")
+        }
+    }
+}
+
+var app = App()
+app.contacts.append("Alice")
+
+// How to create custom initializers
+
+struct Player {
+    let name: String
+    let number: Int
+    
+    init(name: String) {
+        self.name = name
+        number = Int.random(in: 1...99)
+    }
+}
+
+let player = Player(name: "John P")
+print(player.number)
 
