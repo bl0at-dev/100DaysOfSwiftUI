@@ -68,4 +68,24 @@ struct Employee {
     static let example = Employee(username: "cfederighi", password: "hairforceone")
 }
 
- 
+print()
+
+ // checkpoint 6
+
+struct Car {
+    let model: String
+    let seats: Int
+    private(set) var gear = 1
+
+    mutating func changeGear(difference: Int) {
+        let newGear = gear + difference
+
+        if newGear > 1 && newGear <= 10 {
+            gear = newGear
+        }
+    }
+}
+
+var car = Car(model: "Dodge Charger", seats: 5)
+car.changeGear(difference: 1)
+print(car.gear)
