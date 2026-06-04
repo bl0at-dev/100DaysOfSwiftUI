@@ -126,3 +126,74 @@ extension Book {
 
 let lotr = Book(title: "Lord of the Rings", pageCount: 1178, readingHours: 24)
 Book(title: "Everything but the code", pageCount: 382)
+
+// How to create and use protocol extensions
+
+extension Collection {
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
+}
+
+let guests = ["Mario", "Luigi", "Peach"]
+
+if guests.isNotEmpty == false {
+    print("Guest count: \(guests.count)")
+}
+
+protocol Person {
+    var name: String { get }
+    func sayHello()
+}
+
+extension Person {
+    func sayHello() {
+        print("Hi, I'm \(name)")
+    }
+}
+
+struct Employee: Person {
+    let name: String
+}
+
+let taylor = Employee(name: "ur momma")
+taylor.sayHello()
+
+// Checkpoint 8
+
+protocol Building {
+    var type: String { get }
+    var roomsQuantity: Int { get }
+    var propertyCost: Int { get set}
+    var realEstateAgentName: String { get set}
+    
+    func printSummary()
+}
+
+extension Building {
+    func printSummary() {
+        print("Real estate agent name is agent \(realEstateAgentName), rooms quantity: \(roomsQuantity), cost of the \(type): \(propertyCost)")
+    }
+}
+
+struct House: Building {
+    var type: String = "house"
+    var roomsQuantity: Int
+    var propertyCost: Int
+    var realEstateAgentName: String
+}
+
+struct Office: Building {
+    var type: String = "office"
+    var roomsQuantity: Int
+    var propertyCost: Int
+    var realEstateAgentName: String
+}
+
+let house = House(roomsQuantity: 5, propertyCost: 670_000, realEstateAgentName: "Smith")
+house.printSummary()
+
+let office = Office(roomsQuantity: 10, propertyCost: 1_000_000, realEstateAgentName: "Torta")
+office.printSummary()
+
+
