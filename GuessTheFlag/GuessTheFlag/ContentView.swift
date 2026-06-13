@@ -13,20 +13,24 @@ struct ContentView: View {
     
     @State private var showingScore = false
     @State private var scoreTitle = ""
+    
+    @State private var userScore = 0
+    @State private var questionCount = 0
+    @State private var showingGameOver = false
     var body: some View {
         ZStack {
             RadialGradient(stops: [
-                .init(color: .blue, location: 0.3),
+                .init(color: .white, location: 0.3),
                 .init(color: .red, location: 0.3),
             ], center: .top, startRadius: 200, endRadius: 700)
-                .ignoresSafeArea()
+            .ignoresSafeArea()
             
             VStack {
                 Spacer()
                 
                 Text("Guess the flag")
                     .font(.largeTitle.weight(.bold))
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(Color.primary)
                 
                 VStack(spacing: 15) {
                     VStack {
@@ -55,8 +59,14 @@ struct ContentView: View {
                 Spacer()
                 Spacer()
                 
-                Text("Score: ???")
-                    .foregroundStyle(.white)
+                Text("Questions \(questionCount) out of 8")
+                    .foregroundStyle(.primary)
+                    .font(.title.weight(.bold))
+                
+                Spacer()
+                
+                Text("Score: \(userScore)")
+                    .foregroundStyle(.primary)
                     .font(.title.weight(.bold))
                 
                 Spacer()
@@ -66,25 +76,49 @@ struct ContentView: View {
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score is: ???")
+            Text("Your score is: \(userScore)")
+        }
+        .alert("Game Over!", isPresented: $showingGameOver) {
+            Button("Restart Game", action: resetGame)
+        } message: {
+            if userScore > 4 {
+                Text("You've got more than half right \(userScore)/8. Well done!")
+            } else {
+                Text("Try again, you got \(userScore)/8 right.")
+            }
         }
     }
     
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
             scoreTitle = "Correct"
+            userScore += 1
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Wrong, that's the flag of \(countries[number])"
         }
         
+        questionCount += 1
         showingScore = true
     }
     
     func askQuestion() {
+        if questionCount == 8 {
+            showingGameOver = true
+            return
+        }
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func resetGame() {
+        questionCount = 0
+        userScore = 0
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
 }
+
+
 
 #Preview {
     ContentView()
