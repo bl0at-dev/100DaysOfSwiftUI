@@ -16,6 +16,8 @@ struct ViewsAndModifiersApp: App {
             ViewsAsProperties()
             EnvironmentModifiers()
             ConditionalModifiers()
+            WhyDoesSwiftUiUse_some_View_ForItsViewType()
+            WhyModifierOrderMatters()
         }
     }
 }
