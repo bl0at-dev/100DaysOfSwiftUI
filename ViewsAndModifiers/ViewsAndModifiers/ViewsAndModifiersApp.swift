@@ -18,6 +18,7 @@ struct ViewsAndModifiersApp: App {
             ConditionalModifiers()
             WhyDoesSwiftUiUse_some_View_ForItsViewType()
             WhyModifierOrderMatters()
+            Day24_Challenge()
         }
     }
 }
