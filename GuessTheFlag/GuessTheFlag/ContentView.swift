@@ -30,7 +30,7 @@ struct ContentView: View {
                 
                 Text("Guess the flag")
                     .font(.largeTitle.weight(.bold))
-                    .foregroundStyle(Color.primary)
+                    .foregroundStyle(.primary)
                 
                 VStack(spacing: 15) {
                     VStack {
