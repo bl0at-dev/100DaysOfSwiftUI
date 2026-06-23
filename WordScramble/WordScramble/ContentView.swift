@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    @State private var userScore = 0
     
     var body: some View {
         NavigationStack {
@@ -24,7 +25,7 @@ struct ContentView: View {
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
                 }
-                Section {
+                Section("Score: \(userScore)") {
                     ForEach(usedWords, id: \.self) { word in
                         HStack {
                             Image(systemName: "\(word.count).circle")
@@ -39,13 +40,29 @@ struct ContentView: View {
             .alert(errorTitle, isPresented: $showingError) { } message: {
                 Text(errorMessage)
             }
+            .toolbar {
+                Button("Reset", action: startGame)
+            }
+            .safeAreaInset(edge: .bottom) {
+                    Text("Word Scramble")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
         }
     }
     
     func addNewWord() {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
-        guard answer.count > 0 else { return }
+        guard answer.count >= 3 else {
+            wordError(title: "Your word is too short", message: "You must provide a word that is more than 3 letters")
+            return
+        }
+        
+        guard answer != rootWord else {
+            wordError(title: "You cannot use that...", message: "That's the root word!")
+            return
+        }
         
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original")
@@ -65,10 +82,16 @@ struct ContentView: View {
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
+        
+        userScore += answer.count
         newWord = ""
     }
     
     func startGame() {
+        usedWords.removeAll()
+        newWord = ""
+        userScore = 0
+        
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL, encoding: .utf8) {
                 let allWords = startWords.components(separatedBy: "\n")
