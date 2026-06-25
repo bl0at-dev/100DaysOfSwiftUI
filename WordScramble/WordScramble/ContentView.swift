@@ -17,13 +17,16 @@ struct ContentView: View {
     @State private var showingError = false
     @State private var userScore = 0
     
+    @FocusState private var wordIsFocused: Bool
+    
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    TextField("Enter you word", text: $newWord)
+                    TextField("Enter your word", text: $newWord)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
+                        .focused($wordIsFocused)
                 }
                 Section("Score: \(userScore)") {
                     ForEach(usedWords, id: \.self) { word in
@@ -41,7 +44,21 @@ struct ContentView: View {
                 Text(errorMessage)
             }
             .toolbar {
-                Button("Reset", action: startGame)
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+
+                    Button {
+                        wordIsFocused = false
+                    } label: {
+                        Image(systemName: "keyboard.chevron.compact.down")
+                            .font(.body)
+                    }
+                    .buttonStyle(.plain)
+                }
+
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Reset", action: startGame)
+                }
             }
             .safeAreaInset(edge: .bottom) {
                     Text("Word Scramble")

@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		79E66E692FE791E900B94CA7 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79E66E8E2FEB881E00B94CA7 /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		79E66E6B2FE791E900B94CA7 /* WordScramble */ = {
+		79E66E902FEB881E00B94CA7 /* Animations */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WordScramble;
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		79E66E662FE791E900B94CA7 /* Frameworks */ = {
+		79E66E8B2FEB881E00B94CA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		79E66E602FE791E900B94CA7 = {
+		79E66E852FEB881E00B94CA7 = {
 			isa = PBXGroup;
 			children = (
-				79E66E6B2FE791E900B94CA7 /* WordScramble */,
-				79E66E6A2FE791E900B94CA7 /* Products */,
+				79E66E902FEB881E00B94CA7 /* Animations */,
+				79E66E8F2FEB881E00B94CA7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		79E66E6A2FE791E900B94CA7 /* Products */ = {
+		79E66E8F2FEB881E00B94CA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				79E66E692FE791E900B94CA7 /* WordScramble.app */,
+				79E66E8E2FEB881E00B94CA7 /* Animations.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		79E66E682FE791E900B94CA7 /* WordScramble */ = {
+		79E66E8D2FEB881E00B94CA7 /* Animations */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 79E66E742FE791EB00B94CA7 /* Build configuration list for PBXNativeTarget "WordScramble" */;
+			buildConfigurationList = 79E66E992FEB881F00B94CA7 /* Build configuration list for PBXNativeTarget "Animations" */;
 			buildPhases = (
-				79E66E652FE791E900B94CA7 /* Sources */,
-				79E66E662FE791E900B94CA7 /* Frameworks */,
-				79E66E672FE791E900B94CA7 /* Resources */,
+				79E66E8A2FEB881E00B94CA7 /* Sources */,
+				79E66E8B2FEB881E00B94CA7 /* Frameworks */,
+				79E66E8C2FEB881E00B94CA7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				79E66E6B2FE791E900B94CA7 /* WordScramble */,
+				79E66E902FEB881E00B94CA7 /* Animations */,
 			);
-			name = WordScramble;
+			name = Animations;
 			packageProductDependencies = (
 			);
-			productName = WordScramble;
-			productReference = 79E66E692FE791E900B94CA7 /* WordScramble.app */;
+			productName = Animations;
+			productReference = 79E66E8E2FEB881E00B94CA7 /* Animations.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		79E66E612FE791E900B94CA7 /* Project object */ = {
+		79E66E862FEB881E00B94CA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
-					79E66E682FE791E900B94CA7 = {
+					79E66E8D2FEB881E00B94CA7 = {
 						CreatedOnToolsVersion = 26.5;
 					};
 				};
 			};
-			buildConfigurationList = 79E66E642FE791E900B94CA7 /* Build configuration list for PBXProject "WordScramble" */;
+			buildConfigurationList = 79E66E892FEB881E00B94CA7 /* Build configuration list for PBXProject "Animations" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 79E66E602FE791E900B94CA7;
+			mainGroup = 79E66E852FEB881E00B94CA7;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 79E66E6A2FE791E900B94CA7 /* Products */;
+			productRefGroup = 79E66E8F2FEB881E00B94CA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				79E66E682FE791E900B94CA7 /* WordScramble */,
+				79E66E8D2FEB881E00B94CA7 /* Animations */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		79E66E672FE791E900B94CA7 /* Resources */ = {
+		79E66E8C2FEB881E00B94CA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		79E66E652FE791E900B94CA7 /* Sources */ = {
+		79E66E8A2FEB881E00B94CA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		79E66E722FE791EB00B94CA7 /* Debug */ = {
+		79E66E972FEB881F00B94CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -160,6 +160,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 45Y6SCUBD3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -188,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		79E66E732FE791EB00B94CA7 /* Release */ = {
+		79E66E982FEB881F00B94CA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,6 +224,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 45Y6SCUBD3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -244,7 +246,7 @@
 			};
 			name = Release;
 		};
-		79E66E752FE791EB00B94CA7 /* Debug */ = {
+		79E66E9A2FEB881F00B94CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -264,7 +266,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.karolkusowski.WordScramble;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karolkusowski.Animations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -276,7 +278,7 @@
 			};
 			name = Debug;
 		};
-		79E66E762FE791EB00B94CA7 /* Release */ = {
+		79E66E9B2FEB881F00B94CA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -296,7 +298,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.karolkusowski.WordScramble;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karolkusowski.Animations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -311,25 +313,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		79E66E642FE791E900B94CA7 /* Build configuration list for PBXProject "WordScramble" */ = {
+		79E66E892FEB881E00B94CA7 /* Build configuration list for PBXProject "Animations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79E66E722FE791EB00B94CA7 /* Debug */,
-				79E66E732FE791EB00B94CA7 /* Release */,
+				79E66E972FEB881F00B94CA7 /* Debug */,
+				79E66E982FEB881F00B94CA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		79E66E742FE791EB00B94CA7 /* Build configuration list for PBXNativeTarget "WordScramble" */ = {
+		79E66E992FEB881F00B94CA7 /* Build configuration list for PBXNativeTarget "Animations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79E66E752FE791EB00B94CA7 /* Debug */,
-				79E66E762FE791EB00B94CA7 /* Release */,
+				79E66E9A2FEB881F00B94CA7 /* Debug */,
+				79E66E9B2FEB881F00B94CA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 79E66E612FE791E900B94CA7 /* Project object */;
+	rootObject = 79E66E862FEB881E00B94CA7 /* Project object */;
 }
